@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 # gem 'shortener'
 gem 'dynamic_form'
-gem 'url_shortener', '~> 0.0.9'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
