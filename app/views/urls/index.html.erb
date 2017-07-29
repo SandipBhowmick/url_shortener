@@ -30,7 +30,7 @@
 		<div  class="column">
 			<ul>
 				<% @urls.each do |t| %>			
-				<li><a href="<%= t.shortened_url %>"><%= request.url + "/" + t.shortened_url %></a>  &nbsp;  &nbsp; <%= t.full_url %></li>
+				<li><a href="<%= t.shortened_url %>"><%= request.url + t.shortened_url %></a>  &nbsp;  &nbsp; <%= t.full_url %></li>
 			
 				<% end	%>
 			</ul>
