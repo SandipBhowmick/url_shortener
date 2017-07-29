@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>3 Column Layout</title>	
+</head>
+
+<body>
+	<header id="header"><p></p></header>
+	<div id="container">			
+				<h2>Paste a link to shorten it</h2>				
+				<div> <%= render "urls/form" %></div>
+					<div class="container">					 					
+					</div>
+		<nav id="left" class="column">
+			<h3>* &nbsp;</h3>
+			<ul>		
+				<li><a href="#">* &nbsp;</a></li>
+			</ul>
+			<h3>&nbsp;</h3>
+			<ul>
+				<li><a href="#">&nbsp;ab </a></li>
+				<li><a href="#">&nbsp; </a></li>
+				<li><a href="#"> &nbsp;</a></li>
+				<li><a href="#"> &nbsp;</a></li>
+				<li><a href="#">&nbsp; </a></li>
+			</ul>
+
+		</nav>
+		<div  class="column">
+			<ul>
+				<% @urls.each do |t| %>			
+				<li><a href="<%= t.shortened_url %>"><%= request.domain + "/" + t.shortened_url %></a>  &nbsp;  &nbsp; <%= t.full_url %></li>
+			
+				<% end	%>
+			</ul>
+		</div>
+	</div>
+
+	<div id="footer-wrapper">
+		<footer id="footer"><p></p></footer>
+	</div>
+
+</body>
+
+</html>

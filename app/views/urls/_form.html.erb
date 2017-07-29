@@ -1,0 +1,8 @@
+<div class="row"><%= form_for @url do |f| %>
+<div class="col-12 col-md-auto" style="color:#FF0000"><% if !flash[:notice].blank? %>
+    			<%= flash[:notice] %><% end %></div>
+<div class="col-12 col-md-auto"><%= f.text_field(:full_url, placeholder: "pest a url",:size => "30x100") %>
+  <%= submit_tag("Shorten") %> 
+</div>
+<% end %>
+</div>
