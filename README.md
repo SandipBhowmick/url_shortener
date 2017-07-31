@@ -9,7 +9,11 @@ Things you may want to cover:
 
 * System dependencies 
 
-* Configuration
+* Database used PostgreSQL
+
+* Additional gems needed in the Gemfile : gem 'dynamic_form' and gem 'pg'
+
+* Add this to url model "include Rails.application.routes.url_helpers"
 
 * Database creation : run $ rake db:create and then $ rake db:migrate
 
