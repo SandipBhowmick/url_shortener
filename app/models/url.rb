@@ -3,8 +3,16 @@ include Rails.application.routes.url_helpers
 class Url < ApplicationRecord
   validates :full_url, presence: { message: '^Please paste URL' }
   validates :full_url, uniqueness: { message: '^' }
+  validate :url_is_correct?
 
   after_find do |url|
     url.update_attributes(count: (url.count + 1))
+  end
+
+  def url_is_correct?
+    uri = URI.parse(full_url)
+    raise URI::InvalidURIError if uri.host.nil?
+  rescue URI::InvalidURIError
+    errors.add(:full_url, 'is invalid')
   end
 end
